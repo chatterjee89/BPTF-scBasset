@@ -65,6 +65,15 @@ print("\nComputing UMAP...")
 sc.pp.neighbors(adata_cells, use_rep="X_scbasset", n_neighbors=30, metric="cosine")
 sc.tl.umap(adata_cells, min_dist=0.3)
 
+# Save embeddings as CSV for use by 07_WNN_joint_UMAP.R
+emb_csv_path = os.path.join(OUT_DIR, "scbasset_cell_embeddings.csv")
+pd.DataFrame(
+    cell_embeddings,
+    index=adata.obs_names,
+    columns=[f"dim{i+1}" for i in range(cell_embeddings.shape[1])]
+).to_csv(emb_csv_path)
+print(f"Saved cell embeddings CSV: {emb_csv_path}")
+
 # Save UMAP coordinates back to main adata
 adata.obsm["X_scbasset"] = cell_embeddings
 adata.obsm["X_umap_scbasset"] = adata_cells.obsm["X_umap"]
