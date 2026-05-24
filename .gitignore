@@ -1,0 +1,23 @@
+# Large data files
+data/genome/
+data/*.h5
+data/*.h5ad
+data/*.bed
+data/*.mtx
+data/*.txt
+data/*.csv
+
+# Trained models
+models/
+
+# Logs
+logs/
+
+# Outputs (generated figures)
+outputs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
