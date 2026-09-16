@@ -1,5 +1,7 @@
 # scBasset — BPTF KO vs WT Mammary Epithelial Cells
 
+> AI tools were used in developing this repository — see [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for details.
+
 ## What this does
 Trains a CNN (scBasset, Yuan & Kelley 2022) on your scATAC-seq data to:
 1. Learn which DNA sequence features (TF motifs) drive chromatin accessibility per cell type
